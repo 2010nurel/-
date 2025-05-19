@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина по Дорамам для Хадижы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="splash-screen" class="screen">
+        <h1>С днем рождения, Хадижа! Это викторина для тебя. Если отгадаешь больше 70%, тебя ждет подарок!</h1>
+    </div>
+
+    <div id="menu-screen" class="screen hidden">
+        <button id="start-button">Начать</button>
+    </div>
+
+    <div id="quiz-screen" class="screen hidden">
+        <div id="question-container">
+            <p id="question-text"></p>
+        </div>
+        <div id="answers-container">
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+            <button class="answer-button"></button>
+        </div>
+        <div id="feedback-text"></div>
+        <button id="next-question-button" class="hidden">Следующий вопрос</button>
+    </div>
+
+    <div id="results-screen" class="screen hidden">
+        <h2>Результаты Викторины</h2>
+        <p id="score-text"></p>
+        <p id="final-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

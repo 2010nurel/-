@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFDAB9, #E6E6FA); /* От персикового (теплый) к лавандовому (холодный) */
+    color: #333;
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку во время анимаций */
+}
+
+.screen {
+    width: 90%;
+    max-width: 600px;
+    padding: 30px; /* Увеличил паддинг для лучшего вида */
+    background-color: rgba(255, 255, 255, 0.92); /* Чуть менее прозрачный */
+    border-radius: 20px; /* Более скругленные углы */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Усиленная тень */
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-25px); /* Немного увеличил сдвиг */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px); /* Немного увеличил сдвиг */
+}
+
+#splash-screen h1 {
+    font-size: 2em; /* Крупнее для заставки */
+    color: #6A0DAD; /* Глубокий фиолетовый (холодный/нейтральный) */
+    line-height: 1.4;
+}
+
+#menu-screen button,
+#quiz-screen #next-question-button {
+    padding: 18px 35px; /* Крупнее кнопки */
+    font-size: 1.3em;
+    background-color: #FF7F50; /* Коралловый (теплый) */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Более скругленные кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#menu-screen button:hover,
+#quiz-screen #next-question-button:hover {
+    background-color: #FF6347; /* Томатный (теплее) */
+    transform: scale(1.05) translateY(-2px); /* Эффект приподнятия */
+}
+
+#quiz-screen #question-text {
+    font-size: 1.6em; /* Крупнее текст вопроса */
+    margin-bottom: 25px;
+    color: #4682B4; /* Стальной синий (холодный) */
+    line-height: 1.5;
+}
+
+#answers-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Для мобильных лучше одна колонка */
+    gap: 12px; /* Чуть больше расстояние */
+    margin-bottom: 25px;
+}
+
+@media (min-width: 600px) { /* Две колонки для экранов пошире */
+    #answers-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.answer-button {
+    padding: 18px; /* Крупнее кнопки ответов */
+    font-size: 1.05em;
+    background-color: #B0E0E6; /* Пудрово-синий (холодный) */
+    color: #2F4F4F; /* Темно-сланецево-серый */
+    border: 2px solid #87CEEB; /* Небесно-голубой (холодный) */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.answer-button:hover:not(.disabled) {
+    background-color: #AFEEEE; /* Бледно-бирюзовый (холоднее) */
+    border-color: #40E0D0; /* Бирюзовый */
+    transform: translateY(-2px);
+}
+
+.answer-button:active:not(.disabled) {
+    transform: scale(0.96);
+}
+
+.answer-button.correct {
+    background-color: #98FB98 !important; /* Бледно-зеленый */
+    color: #006400 !important; /* Темно-зеленый */
+    border-color: #3CB371 !important; /* Средне-морской зеленый */
+    font-weight: bold;
+}
+
+.answer-button.incorrect {
+    background-color: #FFA07A !important; /* Светло-лососевый (красноватый) */
+    color: #A52A2A !important; /* Коричневый */
+    border-color: #FA8072 !important; /* Лососевый */
+    font-weight: bold;
+}
+
+.answer-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#feedback-text {
+    margin-top: 15px;
+    font-size: 1.2em; /* Крупнее текст обратной связи */
+    min-height: 25px;
+    font-weight: bold;
+}
+
+#results-screen h2 {
+    color: #6A0DAD; /* Глубокий фиолетовый */
+    font-size: 2em; /* Крупнее заголовок результатов */
+}
+
+#results-screen p {
+    font-size: 1.3em; /* Крупнее текст результатов */
+    color: #4682B4; /* Стальной синий */
+    line-height: 1.6;
+}
+
+#final-message {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.4em; /* Крупнее финальное сообщение */
+}
